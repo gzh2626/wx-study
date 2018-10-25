@@ -1,0 +1,39 @@
+ .into>view:nth-child(3){
+       background: #e8e8e8;
+       color: #999;
+     }
+     .into>view:nth-child(4){
+       background: #e8e8e8;
+       color: #999;
+     }
+     .no{
+       padding: 20rpx 0;
+       background: #f00;
+       opacity: 0.3;
+       text-align: center;
+       font-size: 26rpx;
+       margin-bottom: 100rpx;
+       position: fixed;
+       bottom: 0;
+       border:1rpx solid red;
+       width: 100%;
+       color: black;
+     }
+     .pro{
+       padding-bottom: 160rpx;
+     }
+     .plus{
+       border-color: #999;
+       color: #999;
+     }
+     .swiper{
+  width: 100%;
+  height: 550rpx;
+}
+.slide-image{
+  width: 100%;
+  height: 550rpx;
+}
+swiper{
+height: 550rpx;
+}

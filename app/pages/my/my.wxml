@@ -1,0 +1,79 @@
+<view class='efefef'>
+
+  <!--顶部-->
+  <view class='pd30 my'>
+    <view>
+      <image src='{{user.avatarUrl}}'></image>
+    </view>
+    <view class='msg'>
+      <view class='name'>{{user.nickName}}</view>
+      <view class='hao'>{{phone}}</view>
+    </view>
+  </view>
+
+
+  <!--我的积分-->
+  <view class='pd30 mb30 jifen' bindtap='myjiFen'>
+    <view>我的积分</view>
+    <view class='rt'>
+      <text class='geshu'>{{vipScore}}</text>分
+      <image src='../img/jian.png' class='l-jian'></image>
+    </view>
+  </view>
+
+
+  <!--订单列表-->
+  <view class='pd30 dingD' data-order-type="all" bindtap='toOrder'>
+    <view>
+      <image src='../img/my-FL.png' style='width:36rpx;height:34rpx;'></image>
+      全部订单(<text>{{orderNumber.all}}</text>)
+    </view>
+    <view class='rt'>
+      <image src='../img/jian.png' class='l-jian'></image>
+    </view>
+  </view>
+
+  <view class='pd30 dingD' data-order-type="waitBuy" bindtap='toOrder'>
+    <view>
+      <image src='../img/my-dai.png' style='width:36rpx;height:34rpx;'></image>
+      待付款(<text>{{orderNumber.waitForPay}}</text>)
+    </view>
+    <view class='rt'>
+      <image src='../img/jian.png' class='l-jian'></image>
+    </view>
+  </view>
+
+  <view class='pd30 dingD' data-order-type="waitGet" bindtap='toOrder'>
+    <view>
+      <image src='../img/my-shou.png' style='width:36rpx;height:34rpx;'></image>
+      待收货(<text>{{orderNumber.waitForReceive}}</text>)
+    </view>
+    <view class='rt'>
+      <image src='../img/jian.png' class='l-jian'></image>
+    </view>
+  </view>
+
+  <view class='pd30 dingD' data-order-type="waitAssess" bindtap='toOrder'>
+    <view>
+      <image src='../img/my-pj.png' style='width:36rpx;height:34rpx;'></image>
+      待评价(<text>{{orderNumber.waitForComment}}</text>)
+    </view>
+    <view class='rt'>
+      <image src='../img/jian.png' class='l-jian'></image>
+    </view>
+  </view>
+
+  <view class='pd30 dingD' data-order-type="afterSales" bindtap='toOrder'>
+    <view>
+      <image src='../img/my-SH.png' style='width:36rpx;height:34rpx;'></image>
+      售后订单(<text>{{AfterSalesNumber}}</text>)
+    </view>
+    <view class='rt'>
+      <image src='../img/jian.png' class='l-jian'></image>
+    </view>
+  </view>
+
+  <view class='pd30 mt55 tuichu center' bindtap='tui'>
+    退出账号
+  </view>
+</view>

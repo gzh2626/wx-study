@@ -1,0 +1,64 @@
+.scroll{
+     background: #fff;
+     display: flex;
+     flex-wrap: nowrap;
+     flex-direction: row;
+     padding-bottom: 20rpx;
+   }
+   .item{
+     display: inline-block;
+     margin: 0 15rpx;
+   }
+.scroll image{
+  width: 140rpx;
+  height: 120rpx;
+  
+}
+.pro-num{
+  background: #fff;
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 10rpx;
+  font-size: 24rpx;
+  color: #333;
+}
+.order-star{
+  display: flex;
+  justify-content: flex-start;
+  font-size: 26rpx;
+  color: #333;
+  background: #fff;
+  font-weight: bold;
+  padding: 20rpx 30rpx;
+  border-bottom: 1rpx solid #e8e8e8;
+}
+.order-star>view{
+  display: flex;
+  flex-direction: row;
+}
+.order-star image{
+  width: 27rpx;
+  height: 26rpx;
+  margin-left: 20rpx;
+  vertical-align: middle;
+}
+textarea{
+  width: 100%;
+  border-top: 1rpx solid #e8e8e8;
+  background: #fff;
+  border-radius: 7rpx;
+  font-size: 26rpx;
+  color: #999;
+  padding: 25rpx 30rpx;
+}
+button{
+  width: 100%;
+  background: #0097ff;
+  color:#fff;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 0;
+  position: absolute;
+  bottom: 0;
+  font-size: 28rpx;
+}

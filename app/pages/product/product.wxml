@@ -1,0 +1,127 @@
+<view class='pro'>
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{goodsDetail.img}}">
+      <swiper-item class='swiper'>
+        <image src="{{item}}" class="slide-image" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class='tip'>
+    <view>
+      <image src='../img/chanDi.png'></image>
+      <text>产地直供</text>
+    </view>
+    <view>
+      <image src='../img/mian.png'></image>
+      <text>免运费</text>
+    </view>
+    <view>
+      <image src='../img/zheng.png'></image>
+      <text>正品低价</text>
+    </view>
+    <view>
+      <image src='../img/shouHou.png'></image>
+      <text>售后无忧</text>
+    </view>
+  </view>
+  <view class='nei'>
+    <view class='xinXi'>
+      <view>
+        <text class='te' wx:if="{{goodsDetail.isDiscount}}">特</text>
+        <text class='te' wx:if="{{goodsDetail.isLimit}}">限</text> {{goodsDetail.name}}
+      </view>
+      <view>月售{{goodsDetail.thirtyDaysSales}}笔</view>
+    </view>
+    <view class='bieName'>{{goodsDetail.introduction}}</view>
+
+    <view class='xian mt20' wx:if='{{goodsDetail.isLimit==true}}'>
+      每人限购{{goodsDetail.limitCount}}件
+    </view>
+    <view class='proQian'>
+      ￥{{goodsDetail.discountPrice}}
+      <text class='line' wx:if="{{goodsDetail.isDiscount}}">￥{{goodsDetail.price}}</text>
+    </view>
+    <view class='guiGe'> 规格：{{goodsDetail.specification}}</view>
+    <view class='shu' wx:if="{{goodsDetail.status!=1}}">
+      <view class='num'>数量：</view>
+      <view class='add'>
+        <view class='redu' bindtap='minus'>-</view>
+        <input value='{{num}}' />
+        <view class='plus' bindtap='add'>+</view>
+      </view>
+    </view>
+  </view>
+
+  <view wx:if="{{commentArray.length == 0}}">
+    <view class='more'>暂无评价</view>
+  </view>
+  <view wx:if="{{commentArray.length != 0}}">
+    <view class='ping' bindtap='pingjia' data-goodsId='{{goodsDetail.id}}'>
+      <view>评价（{{count}}）</view>
+      <view>
+        <image src='../img/jian.png'></image>
+      </view>
+    </view>
+
+    <view wx:for='{{commentArray}}'>
+      <view class='user'>
+        <view>
+          <image src='{{item.userHeadImg}}'></image>
+        </view>
+        <text>{{item.userName}}</text>
+      </view>
+      <view class='ping1'>
+        <view>
+          {{item.content}}
+        </view>
+      </view>
+    </view>
+
+    <view class='more' bindtap='pingjia' data-goodsId='{{goodsDetail.id}}'>查看更多评价</view>
+  </view>
+
+
+
+  <view class='xiangXi'>
+    <text>——</text> 商品详情
+    <text>——</text>
+  </view>
+  <view class='pro-img' wx:for='{{goodsDetail.descriptionImg}}'>
+    <image src='{{item}}'></image>
+  </view>
+  <view class="descriptionContent">
+    {{goodsDetail.descriptionContent}}
+  </view>
+  <view class='all-btm'>
+    ——已经到底了——
+  </view>
+</view>
+<view class='into'>
+
+  <!-- <view>
+    <image src='../img/keFu.png'></image>
+    <text>客服</text>
+  </view> -->
+  <view>
+    <!-- <image src='../img/keFu.png'></image> -->
+    <contact-button type="default-dark" size="18" session-from="{{sessionFrom}}"></contact-button>
+    <text>客服</text>
+  </view>
+
+  <!-- <button open-type="contact">
+     <image src='../img/keFu.png'></image>
+     <text>客服</text>
+  </button> -->
+
+
+
+
+  <view class="carbox" bindtap='toCart'>
+    <image src='../img/shopCar.png'></image>
+    <text>购物车</text>
+    <text class="car-num" wx:if="{{carLength!=0}}">{{carLength}}</text>
+  </view>
+  <button bindtap='buyNow' disabled='{{statusDisable}}'>立即购买</button>
+  <button bindtap='into' disabled='{{statusDisable}}'>加入购物车</button>
+</view>
+<view class='no' wx:if="{{goodsDetail.status==1}}">该商品暂时无货，请耐心等待。</view>

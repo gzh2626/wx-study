@@ -1,0 +1,31 @@
+<view class='cont_'>
+
+  <!--顶部评价商品图片-->
+  <scroll-view scroll-x="true" class='scroll mt20' style="white-space: nowrap; display:flex ">
+    <view class='item' wx:for="{{orderDetail.goodList}}" bindtap='pro'>
+      <image src='{{item.goodsImg}}' mode='aspectFill' bindtap='pro'></image>
+    </view>
+  </scroll-view>
+  <view class='pro-num pd30 mb20'>共
+    <text>{{orderDetail.goodList.length}}</text>件商品</view>
+
+  <view class='order-star pd30'>
+    订单评价
+    <view>
+      <block wx:for="{{stars}}">
+        <image class="star-image" style="left: {{(item+2.5)*50}}rpx" src="{{key > item ?halfSrc: normalSrc}}">
+          <view class="item_" style="left:0rpx" data-select-index="{{item+1}}" bindtap="selectLeft"></view>
+
+        </image>
+      </block>
+    </view>
+  </view>
+
+  <!--写点什么-->
+
+  <textarea bindinput="bindTextArea" placeholder="写点什么来说说你购买的商品吧，满足你的期望吗？" />
+
+  <button bindtap='submitAssess' disabled='{{submitDisable}}'>提交评价</button>
+
+
+</view>

@@ -1,0 +1,50 @@
+<view class='cont_'>
+
+<view class='time'>2017年11月20日  10:12</view>
+<view class='kefu'>客服卷心菜为您服务</view>
+<!--客服的对话-->
+<view class='pd30 other'>
+  <view class='head'>
+  <image src='../img/other.png'></image>
+  </view>
+  <view class='talk'>
+  <view>您好，很高兴为你服务。请问您
+想咨询什么问题？</view>
+  </view>
+</view>
+
+<view class='time'>2017年11月20日  10:12</view>
+<!--自己的对话-->
+<view class='pd30 other my'>
+  <view class='talk'>
+  <view>你们的物流是什么？</view>
+  </view>
+  <view class='head'>
+  <image src='../img/my.png'></image>
+  </view>
+</view>
+
+<view class='time'>2017年11月20日  10:12</view>
+
+<view class='pd30 other'>
+  <view class='head'>
+  <image src='../img/other.png'></image>
+  </view>
+  <view class='talk'>
+  <view>您好，很高兴为你服务。请问您
+想咨询什么问题？您好，很高兴为你服务。请问您
+想咨询什么问题？您好，很高兴为你服务。请问您
+想咨询什么问题？您好，很高兴为你服务。请问您
+想咨询什么问题？</view>
+  </view>
+</view>
+
+
+<view class='input'>
+<view><image src='../img/yuYin.png'></image></view>
+<view><input></input></view>
+<view><image src='../img/emoji.png'></image></view>
+<view><image src='../img/jia.png'></image></view>
+</view>
+
+</view>

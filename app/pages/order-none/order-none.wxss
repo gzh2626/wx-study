@@ -1,0 +1,9 @@
+.none{
+  height: 240rpx;
+  color: #333;
+  background: #efefef;
+  align-items: center;
+ justify-content: center;
+  display: flex;
+  font-size: 24rpx;
+}

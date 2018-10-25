@@ -1,0 +1,26 @@
+.section{
+    width: 600rpx;
+  }
+.section>input{
+    padding-left: 25rpx;
+    font-size: 26rpx;
+    width: 600rpx;
+  }
+.weizhi>text{
+  font-size: 26rpx;
+  color:#fff;
+}
+.no{
+  text-align: center;
+  font-size: 24rpx;
+  align-content: center;
+  padding-top: 230rpx;
+}
+.no>image{
+  width: 114rpx;
+  height: 128rpx;
+}
+.no>view{
+  color: #999;
+  margin-top: 60rpx;
+}

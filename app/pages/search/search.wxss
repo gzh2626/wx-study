@@ -1,0 +1,56 @@
+
+.delete{
+  display: flex;
+  background: #f4f5f6;
+  height: 80rpx;
+  justify-content: space-between;
+  font-size: 28rpx;
+  line-height: 80rpx;
+  color: #333;
+}
+.delete>image{
+  height: 37rpx;
+  width: 28rpx;
+  margin-top: 26rpx;
+}
+.name{
+  padding-top: 10rpx;
+  /* display: flex;
+  flex-wrap: wrap; */
+  float:left;
+}
+.name>view{
+  padding: 15rpx 25rpx;
+  border-radius: 7rpx;
+  border:1rpx solid #ccc;
+  color: #666;
+  margin:20rpx 10rpx 0 0;
+  font-size: 28rpx;
+}
+
+.section{
+    width: 600rpx;
+  }
+.section>input{
+    padding-left: 25rpx;
+    font-size: 26rpx;
+    width: 600rpx;
+  }
+.weizhi>text{
+  font-size: 26rpx;
+  color:#fff;
+}
+.no{
+  text-align: center;
+  font-size: 24rpx;
+  align-content: center;
+  padding-top: 230rpx;
+}
+.no>image{
+  width: 114rpx;
+  height: 128rpx;
+}
+.no>view{
+  color: #999;
+  margin-top: 60rpx;
+}

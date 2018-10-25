@@ -1,0 +1,75 @@
+<view class='cont'>
+
+
+  <view class='tab pd30 swiper-tab'>
+    <view class="{{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">全部</view>
+    <view class="{{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">待付款</view>
+    <view class="{{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">待收货</view>
+    <view class="{{currentTab==3 ? 'on' : ''}}" data-current="3" bindtap="swichNav">待评价</view>
+    <view class="{{currentTab==4 ? 'on' : ''}}" data-current="4" bindtap="swichNav">售后</view>
+  </view>
+
+
+
+<swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 31}}px" bindchange="bindChange">  
+
+
+    <!-- 全部 -->  
+    <swiper-item>  
+    <view class='no-dingdan' >
+    <image src='../img/no-dingdan.png'></image>
+    <view>您还没有相关的订单</view>
+    </view>
+    </swiper-item> 
+
+
+
+    <!-- 待付款 -->  
+    <swiper-item>  
+    <view class='no-dingdan' >
+    <image src='../img/no-dingdan.png'></image>
+    <view>您还没有相关的订单</view>
+    </view>
+    </swiper-item>  
+
+
+    <!-- 待收货 -->  
+    <swiper-item>  
+    
+    <view class='no-dingdan' >
+    <image src='../img/no-dingdan.png'></image>
+    <view>您还没有相关的订单</view>
+    </view>
+    </swiper-item>  
+
+
+    <!-- 待评价 -->  
+    <swiper-item>  
+     <view class='no-dingdan' >
+    <image src='../img/no-dingdan.png'></image>
+    <view>您还没有相关的订单</view>
+    </view>
+    </swiper-item> 
+
+    <!-- 售后 -->  
+    <swiper-item>  
+   <view class='no-dingdan' >
+    <image src='../img/no-dingdan.png'></image>
+    <view>您还没有相关的订单</view>
+    </view>
+    </swiper-item>  
+</swiper>  
+
+
+
+  <view>
+   
+    
+    <view>
+
+    </view>
+  </view>
+
+
+
+</view>

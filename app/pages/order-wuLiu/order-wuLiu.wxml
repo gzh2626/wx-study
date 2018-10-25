@@ -1,0 +1,67 @@
+<wxs module="common" src="../../utils/common.wxs"></wxs>
+<view class='cont_'>
+  <view class='yunShu mb20'>
+    <view class=''>
+      <image src='../img/shouHuo.png' style='width:152rpx;height:108rpx;'></image>
+      <!-- <view class='pei'>
+        <view>物流公司：
+          <text>自营配送</text>
+        </view>
+        <view>物流编号：
+          <text>123432434</text>
+        </view>
+      </view> -->
+    </view>
+    <view id='ing'>{{logisticsDetail.status}}</view>
+  </view>
+
+  <view class='wuLiu1'>
+    <view class='duan' wx:for="{{logisticsDetail.logisticInfoList}}">
+      <text class="bule-dot"></text>
+      <view class='line'></view>
+      <view>
+        <view class='addr-dot'>{{item.content}}</view>
+        <view class='time'>{{common.formatTime(item.createdAt)}}</view>
+      </view>
+    </view>
+    <!-- <view class='duan'>
+      <text class="bule-dot"></text>
+      <view class='line'></view>
+      <view>
+        <view class='addr-dot'>您的订单在【南京接货仓】分拣完成</view>
+        <view class='time'>2017-11-05 02:19:20</view>
+      </view>
+    </view>
+    <view class='duan'>
+      <text class="bule-dot"></text>
+      <view class='line'></view>
+      <view>
+        <view class='addr-dot'>您的订单已拣货完成</view>
+        <view class='time'>2017-11-05 02:19:20</view>
+      </view>
+    </view>
+    <view class='duan'>
+      <text class="bule-dot"></text>
+      <view class='line'></view>
+      <view>
+        <view class='addr-dot'>您的订单预计11月5日送到提货点</view>
+        <view class='time'>2017-11-05 02:19:20</view>
+      </view>
+    </view>
+    <view class='duan'>
+      <text class="bule-dot"></text>
+      <view class='line'></view>
+      <view>
+        <view class='addr-dot'>您的订单已审核</view>
+        <view class='time'>2017-11-05 02:19:20</view>
+      </view>
+    </view>
+    <view class='duan'>
+      <text class="bule-dot"></text>
+      <view>
+        <view class='addr-dot'>您的订单已提交仓库处理</view>
+        <view class='time'>2017-11-05 02:19:20</view>
+      </view>
+    </view> -->
+  </view>
+</view>

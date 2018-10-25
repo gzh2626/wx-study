@@ -1,0 +1,161 @@
+<wxs module="common" src="../../utils/common.wxs"></wxs>
+<!--顶部分类-->
+<scroll-view scroll-x class="my-scroll">
+  <view id="img1" class='{{typeId==-1?"active":""}} s-item' data-typeid='-1' bindtap='changeType'>
+    全部
+  </view>
+  <view id="img2" class='{{typeId==0?"active":""}} s-item' data-typeid='0' bindtap='changeType'>
+    新鲜蔬菜
+  </view>
+  <view id="img3" class='{{typeId==1?"active":""}} s-item' data-typeid='1' bindtap='changeType'>
+    肉禽
+  </view>
+  <view id="img3" class='{{typeId==2?"active":""}} s-item' data-typeid='2' bindtap='changeType'>
+    水产冻货
+  </view>
+  <view id="img3" class='{{typeId==3?"active":""}} s-item' data-typeid='3' bindtap='changeType'>
+    蛋品豆面
+  </view>
+  <view id="img3" class='{{typeId==4?"active":""}} s-item' data-typeid='4' bindtap='changeType'>
+    米面粮油
+  </view>
+  <view id="img3" class='{{typeId==5?"active":""}} s-item' data-typeid='5' bindtap='changeType'>
+    休闲酒饮
+  </view>
+  <view id="img3" class='{{typeId==6?"active":""}} s-item' data-typeid='6' bindtap='changeType'>
+    调料干货
+  </view>
+  <view id="img3" class='{{typeId==7?"active":""}} s-item' data-typeid='7' bindtap='changeType'>
+    时令水果
+  </view>
+</scroll-view>
+
+<view wx:if='{{nowCartArray.length!=0}}' class='pd30 heji'>
+  全部：采购
+  <text>{{typeCount}}</text>种商品,共
+  <text>{{totalCount}}</text>件,合计￥
+  <text>{{totalPrice}}</text>
+</view>
+
+
+<!--购物车商品-->
+<view class='con'>
+
+
+  <view wx:if='{{nowCartArray.length!=0}}' class="all-car touch-item {{item.isTouchMove ? 'touch-move-active' : ''}}" data-index="{{index}}" bindtouchstart="touchstart" bindtouchmove="touchmove" wx:for="{{nowCartArray}}" wx:key="">
+
+    <view class="content">
+      <view class="cart-box">
+        <view class='pd30'>
+          <view class='pro-car'>
+            <view class='icon'>
+              <icon wx:if="{{item.selected}}" type="success" color="#0097ff" bindtap="selectList" data-index="{{index}}" size='15' />
+              <icon wx:else type="circle" bindtap="selectList" size='15' data-index="{{index}}" />
+            </view>
+
+            <navigator bindtap='pro' data-goodsid='{{item.goodsId}}' data-index='{{index}}'>
+              <image class="cart-thumb" src="{{item.goodsImg}}"></image>
+            </navigator>
+            <view class='car-msg'>
+              <view bindtap='pro' bindtap='pro' data-goodsid='{{item.goodsId}}' data-index='{{index}}'>{{item.goodsName}}</view>
+              <view>规格：{{item.goodsSpecification}}</view>
+
+              <text wx:if='{{item.isLimit==false}}' class='xian'>不限购</text>
+              <text wx:if='{{item.isLimit==true}}' class='xian'>每单限购{{item.limitCount}}笔</text>
+              <view class='car-jia'>
+                <view class='qian'>
+                  ￥{{common.setPrice(item.goodsDiscountPrice)}}
+                  <text class='shou'>月售<text>{{item.thirtyDaysSales}}</text>笔</text>
+                </view>
+                <view class='add'>
+                  <text class='redu' catchtap="minusCount" data-index="{{index}}">-</text>
+                  <input value='{{item.count}}'></input>
+                  <text class='plus' catchtap="addCount" data-index="{{index}}">+</text>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view>
+        <!--<icon wx:if="{{selectAllStatus}}" type="success_circle" color="#fff" bindtap="selectAll"/>
+    <icon wx:else type="circle" color="#fff" bindtap="selectAll"/>-->
+        <view class='total pd30'>
+          <text>小计:</text>
+          <text>￥{{item.subTotal}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="del" catchtap="del" data-index="{{index}}">删除</view>
+
+  </view>
+  <view style='margin-top:80rpx' wx:if="{{nowCartArray.length == 0&&pastCartArray.length==0}}">
+    <view class='car'>
+      <image src='../img/car-no.png'></image>
+      <view>购物车是空的哦~</view>
+      <view>购物车内的商品仅保留一天</view>
+    </view>
+  </view>
+
+
+  <!--失效商品-->
+  <view class='shiX pd30'  wx:if="{{pastCartArray.length!==0}}">
+    <view>失效商品{{pastCartArray.length}}件</view>
+    <view bindtap='clear'>清空</view>
+  </view>
+
+
+  <view class="all-car touch-item " data-index="{{index}}" bindtouchstart="touchstart" bindtouchmove="touchmove" wx:for="{{pastCartArray}}" wx:key="">
+
+    <view class="content">
+      <view class="cart-box">
+        <view class='pd30'>
+          <view class='pro-car'>
+            <view class='icon SX'>
+              <view>失效</view>
+            </view>
+            <navigator bindtap='pro' data-goodsid='{{item.goodsId}}' url="../details/details?id={{item.id}}">
+              <image class="cart-thumb" src="{{item.goodsImg}}"></image>
+            </navigator>
+            <view class='car-msg'>
+              <view>{{item.goodsName}}</view>
+              <view>规格：{{item.goodsSpecification}}</view>
+              <text wx:if='{{item.isLimit==false}}' class='xian'>不限购</text>
+              <text wx:if='{{item.isLimit==true}}' class='xian'>每单限购{{item.limitCount}}笔</text>
+              <view class='car-jia'>
+                <view class='qian'>
+                  ￥{{common.setPrice(item.goodsDiscountPrice/100)}}
+                  <text class='shou'>月售<text>{{item.thirtyDaysSales}}</text>笔</text>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view>
+      </view>
+    </view>
+  </view>
+
+
+  <view class='btm'>
+    <view class='icon'>
+      <icon wx:if="{{isSelectAll==true}}" type="success" color="#0097ff" bindtap="selectCartAll" data-index="{{index}}" size='15' />
+      <icon wx:else type="circle" bindtap="selectCartAll" size='15' data-index="{{index}}" /> 全选
+      <!-- <icon type="{{}}" color="#0097ff" bindtap="selectCartAll">全选</icon> -->
+    </view>
+    <view class='jieS'>
+      <view>
+        <view class='zong'>
+          合计：￥
+          <text>{{totalPrice}}</text>
+        </view>
+        <text>商品仅保留一天，请尽快下单哦</text>
+      </view>
+      <view bindtap='toPay' data-totalPrice='{{totalPrice}}'>结算</view>
+    </view>
+  </view>
+
+
+
+</view>

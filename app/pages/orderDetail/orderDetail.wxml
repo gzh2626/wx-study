@@ -1,0 +1,157 @@
+<wxs module="common" src="../../utils/common.wxs"></wxs>
+<view class='cont_'>
+
+
+  <view class='state_ mb20'>
+    <view>{{common.getStatus(orderDetail.status)}}</view>
+    <view>
+      <image src='{{common.getSrc(orderDetail.status)}}'></image>
+    </view>
+  </view>
+
+  <view bindtap='goToLogistics' class='state_ wuLiu mb20' wx:if="{{(orderDetail.status==3||orderDetail.status==1||orderDetail.status==8)&&orderDetail.logisticInfoList.length>0}}">
+    <view class='add_'>
+      <image src='../img/wuLiu-img.png'></image>
+      <view>
+        <view>{{orderDetail.logisticInfoList[0].content}}</view>
+        <view class='wuLiu-time'>{{common.formatTime(orderDetail.logisticInfoList[0].createdAt)}}</view>
+      </view>
+    </view>
+    <view class='jianRight'>
+      <image src='../img/jian.png'></image>
+    </view>
+  </view>
+  <!--订单详情-->
+  <view>
+
+    <view class='ding-num_ pd30'>
+      <view>订单编号：
+        <text>{{orderDetail.orderNo}}</text>
+      </view>
+      <view>{{common.formatTime(orderDetail.createdAt)}}</view>
+    </view>
+    <!--筛选条-->
+    <scroll-view scroll-x class="my-scroll_">
+      <view id="img1_" class="s-item_ pd30" wx:for="{{goodType}}" bindtap='fliterGoodList' data-good-category="{{item.category}}">
+        <text class="{{goodCategory==item.category?'active':''}}">{{item.name}}</text>
+        <image src='../img/btm-jian.png' wx:if="{{item.category=='all'}}"></image>
+      </view>
+      <!-- <view id="img2_" class="s-item_">
+        新鲜蔬菜
+      </view>
+      <view id="img3_" class="s-item_">
+        肉禽
+      </view>
+      <view id="img4_" class="s-item_">
+        水产冻货
+      </view>
+      <view id="img5_" class="s-item_">
+        蛋品豆面
+      </view>
+      <view id="img6_" class="s-item_">
+        米面粮油
+      </view>
+      <view id="img7_" class="s-item_">
+        休闲酒饮
+      </view>
+      <view id="img8_" class="s-item_">
+        调料干货
+      </view>
+      <view id="img3_" class="s-item_">
+        时令水果
+      </view> -->
+    </scroll-view>
+    <view class='pd30 heji_'>
+      全部：采购
+      <text>{{orderDetail.goodList.length}}</text>种商品,共
+      <text>{{orderDetail.count}}</text>件,合计￥
+      <text>{{orderDetail.totalAmount}}</text>
+    </view>
+    <!--商品-->
+    <view class='one-d_' wx:for='{{goodList}}'>
+      <view class='pro-mai_' bindtap='toDetail' data-good-id="{{item.goodsId}}">
+        <view class='left_'>
+          <view>
+            <image src='{{item.goodsImg}}' mode='scaleToFill'></image>
+          </view>
+          <view class='pro-name'>
+            <view>{{item.goodsName}}</view>
+            <view>规格：{{item.specification}}</view>
+          </view>
+        </view>
+        <view class='right_'>
+          <view>￥{{item.goodsDiscountPrice}}</view>
+          <view wx:if="{{item.isDiscount}}" class="line">￥{{item.goodsPrice}}</view>
+          <view>×{{item.count}}</view>
+        </view>
+      </view>
+
+      <view class='all-money_ pd30'>
+        <view>合计：￥
+          <text>{{common.setPrice(item.count*item.goodsDiscountPrice)}}</text>
+        </view>
+      </view>
+    </view>
+    <!--商品总额-->
+    <view class='zongE pd30'>
+      <view>商品总额:</view>
+      <view>￥
+        <text>{{orderDetail.totalAmount}}</text>
+      </view>
+    </view>
+    <!--运费-->
+    <view class='zongE pd30'>
+      <view>运费:</view>
+      <view>免运费</view>
+    </view>
+    <view class='zongE dan-heji_ pd30 mb20'>
+      <view> 合计：￥
+        <text>{{orderDetail.totalAmount}}</text>
+      </view>
+    </view>
+
+    <!--支付方式-->
+    <view class='pay_ mb20'>
+      <view class='pd30'>支付方式：</view>
+      <view class='pd30' wx:if="{{orderDetail.payType==0}}">
+        <view>定金：</view>
+        <view>￥
+          <text>{{orderDetail.deposit}}</text>
+        </view>
+      </view>
+       <view class='pd30' wx:if="{{orderDetail.payType==0}}">
+        <view>尾款：</view>
+        <view>￥
+          <text>{{orderDetail.remainingBalance}}</text>
+        </view>
+      </view>
+      <view class='pd30' wx:if="{{orderDetail.payType==1}}">
+        <view>在线支付：</view>
+        <view>￥
+          <text>{{orderDetail.totalAmount}}</text>
+        </view>
+      </view>
+    </view>
+
+    <!--返积分-->
+    <view class='fen_ pd30'>
+      <view>积分</view>
+      <view>返积分
+        <text>{{orderDetail.vipScore}}</text>点</view>
+    </view>
+
+    <!--订单操作-->
+    <view class='btn pd30'>
+      <view data-order-id='{{orderDetail.id}}' bindtap="confirmOrder" wx:if="{{orderDetail.status==3||orderDetail.status==7}}">确认收货</view>
+
+      <view bindtap='payment' wx:if="{{orderDetail.status==6}}">去支付</view>
+      <navigator url="/pages/order-pingJia/order-pingJia?orderId={{orderDetail.id}}" wx:if="{{orderDetail.status==1}}">去评价</navigator>
+      <view data-order-id='{{orderDetail.id}}' bindtap="cancelOrder" wx:if="{{orderDetail.status==6}}">取消订单</view>
+      <navigator style="margin-left:20rpx;" url="/pages/shouHou/shouHou?orderId={{orderDetail.id}}" wx:if="{{(orderDetail.status==1||orderDetail.status==8)&& !orderDetail.isCustomerService}}">申请售后</navigator>
+      <navigator url="/pages/order-wuLiu/order-wuLiu?orderId={{orderDetail.id}}" wx:if="{{orderDetail.status==1||orderDetail.status==3}}">查看物流</navigator>
+      <view data-order-id='{{orderDetail.id}}' bindtap="deleteOrder" wx:if="{{orderDetail.status==8}}">删除订单</view>
+    </view>
+  </view>
+
+
+</view>

@@ -1,0 +1,14 @@
+page{
+  background: #f4f5f6;
+}
+.city-choose{
+  background: #fff;
+}
+.city-choose>view{
+  height: 80rpx;
+  border-bottom: 1rpx solid #e8e8e8;
+  line-height: 80rpx;
+  color: #333;
+  padding-left: 30rpx;
+  font-size: 26rpx;
+}

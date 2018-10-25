@@ -1,0 +1,13 @@
+<view class='pd30 weizhi1'>
+    <view class="section1">
+      <input type="digit" placeholder="请输入关键字搜索" confirm-type ="search"/>
+      <view>
+        <image src="../img/search.png"></image>
+      </view>
+    </view>
+    <view class='dis' bindtap='back'>取消</view>
+</view>
+<view class='no pd30'>
+  <image src='../img/no-img.png'></image>
+  <view>没有查询到您要的商品</view>
+</view>

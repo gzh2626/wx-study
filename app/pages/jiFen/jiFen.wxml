@@ -1,0 +1,42 @@
+<wxs module="common" src="../../utils/common.wxs"></wxs>
+<view class='cont'>
+
+
+  <view class='jifen'>
+    <image src='../img/star1.png'></image>
+    <view class='fen'>
+      <view>{{vipScore}}</view>
+      <view>当前积分</view>
+      <button class="show-btn" bindtap="showDialogBtn" disabled='{{putVipScore}}'>积分兑换</button>
+    </view>
+  </view>
+  <view class='f3'></view>
+  <view class='detail'>
+
+    <view>——　积分明细　——</view>
+
+    <view class='mingXi pd30' wx:for="{{vipScoreList}}">
+      <view>
+        <view>{{item.name}}<text wx:if="{{item.name=='下单送积分'}}">（订单号：{{item.orderNo}}）</text></view>
+        <view class='time'>{{common.formatTime(item.createdAt)}}</view>
+      </view>
+      <view class='xi'>{{item.quantity}}</view>
+    </view>
+
+  </view>
+
+
+</view>
+
+
+<view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<view class="modal-dialog" wx:if="{{showModal}}">
+  <view class="modal-title">积分对换</view>
+  <view class="modal-content">
+    <view class="modal-input">
+      <input placeholder-class="input-holder" type="number" maxlength="10" bindinput="inputChange" class="input"></input>个
+      <button class="btn-confirm" disabled="{{confirmBtn}}" bindtap="onConfirm" data-status="confirm">确定</button>
+    </view>
+  </view>
+  <view class='foot'>请和我们的工作人员确认后再兑换哦</view>
+</view>

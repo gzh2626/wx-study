@@ -1,0 +1,67 @@
+.cont{
+  background: #f4f5f6;
+  height: 100vh;
+}
+.all{
+  color: #0097ff;
+  height: 80rpx;
+  background: #fff;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  border-bottom: 1rpx solid #e8e8e8;
+}
+.all-ping{
+  background: #fff;
+}
+.man{
+  display: flex;
+  justify-content: space-between;
+}
+.man image{
+ width: 60rpx;
+ height: 60rpx;
+ border-radius: 50%;
+ vertical-align: middle;
+ margin-right: 10rpx;
+}
+.man>view{
+  display: flex;
+  font-size: 28rpx;
+  line-height: 60rpx;
+  color: #333;
+}
+
+.star{
+  padding-right: 3rpx;
+  float: left;
+}
+.star-box{
+  padding-left: 60rpx;
+  height:8px;
+}
+.star1{
+  display: flex;
+  padding-left: 5rpx;
+  margin-top: -5rpx;  
+}
+.star1 image{
+  width: 27rpx;
+  height: 26rpx;
+}
+.pingjia{
+  font-size: 24rpx;
+  color: #333;
+  padding-left: 70rpx;
+  margin-top: 15rpx;
+  line-height: 35rpx;
+}
+.zu{
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #e8e8e8;
+}
+.no-more{
+  margin-top: 50rpx;
+  text-align: center;
+  font-size: 24rpx;
+  color: #a0a0a0;
+}

@@ -1,0 +1,185 @@
+.has {
+  display: flex;
+  font-size: 26rpx;
+  justify-content: space-around;
+  height: 90rpx;
+  line-height: 90rpx;
+  border-bottom: 1rpx solid #e8e8e8;
+  margin-top: 90rpx;
+}
+
+.xiao>image {
+  width: 20rpx;
+  height: 11rpx;
+  vertical-align: middle;
+  margin-left: 10rpx;
+}
+
+.jia>image {
+  width: 13rpx;
+  margin-left: 10rpx;
+  height: 20rpx;
+  vertical-align: middle;
+}
+
+.search-pro {
+  padding: 0 30rpx 80rpx;
+}
+
+.tuijian {
+  display: flex;
+  padding: 20rpx 0 0;
+  background: #fff;
+  border-bottom: 1rpx solid #e8e8e8;
+}
+
+.tuiJian-img {
+  flex: 1;
+}
+
+.tuiJian-img>image {
+  width: 170rpx;
+  height: 170rpx;
+  border-radius: 5rpx;
+}
+
+.tuiJian-text {
+  flex: 3;
+  font-size: 24rpx;
+  padding: 0rpx 0 20rpx 20rpx;
+  box-sizing: border-box;
+}
+
+.tuiJian-text>view:first-child {
+  height: 65rpx;
+  overflow: hidden;
+  white-space: wrap;
+  text-overflow: ellipsis;
+}
+
+.gui {
+  font-size: 24rpx;
+  color: #999;
+  margin-top: 15rpx;
+}
+
+.tuijian-money {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15rpx;
+  font-size: 30rpx;
+  font-weight: bold;
+}
+
+.yueXiao {
+  font-size: 24rpx;
+  color: #999;
+  margin-top: 5rpx;
+  margin-left: 15rpx;
+  font-weight: normal;
+}
+
+.num {
+  line-height: 45rpx;
+  margin: 0 15rpx;
+}
+
+.money {
+  color: #ffa800;
+  display: flex;
+}
+
+.add input {
+  width: 40rpx;
+  padding-left: 15rpx;
+}
+
+.plus {
+  background: #0097ff;
+  color: #fff;
+}
+
+.all {
+  position: absolute;
+  top: 180rpx;
+  left: 0;
+}
+
+.all>view {
+  border-bottom: 1rpx solid #e8e8e8;
+  height: 90rpx;
+  line-height: 90rpx;
+  padding-left: 30rpx;
+  z-index: 10000;
+  background: #fafafa;
+  width: 750rpx;
+}
+
+.section {
+  width: 600rpx;
+}
+
+.section>input {
+  padding-left: 25rpx;
+  font-size: 26rpx;
+  width: 600rpx;
+}
+
+.weizhi>text {
+  font-size: 26rpx;
+  color: #fff;
+}
+
+.no {
+  text-align: center;
+  font-size: 24rpx;
+  align-content: center;
+  padding-top: 400rpx;
+}
+
+.no>image {
+  width: 114rpx;
+  height: 128rpx;
+}
+
+.no>view {
+  color: #999;
+  margin-top: 60rpx;
+}
+
+.bottom-view {
+  height: 80rpx;
+  background: #fff;
+  width: 100%;
+  position: fixed;
+  z-index: 20;
+  bottom: 0;
+  border-top: 1px solid #edeaea;
+}
+
+.bottom-view .total-view {
+  float: left;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  padding: 0 30rpx;
+}
+
+.bottom-view .price-view {
+  float: right;
+  line-height: 80rpx;
+  font-size: 28rpx;
+}
+
+.bottom-view .price-view text {
+  color: #fda734;
+  font-size: 34rpx;
+}
+
+.bottom-view .price-view view {
+  display: inline-block;
+  width: 160rpx;
+  margin-left: 25rpx;
+  text-align: center;
+  background: #0097ff;
+  color: #fff;
+}

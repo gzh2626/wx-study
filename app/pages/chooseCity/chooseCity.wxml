@@ -1,0 +1,34 @@
+<view class='cont_'>
+<!--顶部搜索-->
+<view class='weizhi pd30'>
+    <view>
+      <image src="../img/weizhi.png"></image>
+      <text class="picker city">南京</text>
+    </view>
+</view>
+<view class='city-choose'>
+  <view>上海</view>
+  <view>南通</view>
+  <view>靖江</view>
+  <view>泰兴</view>
+  <view>泰州</view>
+  <view>扬州</view>
+  <view>镇江</view>
+  <view>常州</view>
+  <view>江阴</view>
+  <view>张家港</view>
+  <view>常熟</view>
+  <view>太仓</view>
+</view>
+
+   
+
+
+
+  
+
+
+
+
+
+ </view>

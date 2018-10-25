@@ -1,0 +1,275 @@
+d.pro {
+  background: #f3f4f5;
+}
+
+.pro>view {
+  background: #fff;
+}
+
+.swiper {
+  width: 100%;
+  height: 550rpx;
+}
+
+.slide-image {
+  width: 100%;
+  height: 550rpx;
+}
+
+swiper {
+  height: 550rpx;
+}
+
+.tip {
+  display: flex;
+  font-size: 26rpx;
+  justify-content: space-between;
+  padding: 20rpx 30rpx;
+  margin-bottom: 20rpx;
+}
+
+.tip image {
+  width: 37rpx;
+  height: 37rpx;
+  vertical-align: sub;
+  margin-right: 10rpx;
+}
+
+.xinXi {
+  display: flex;
+  height: 115rpx;
+  padding: 5rpx 0rpx;
+  font-size: 28rpx;
+}
+
+.xinXi>view:first-child {
+  flex: 5;
+  margin-bottom: 2rpx;
+  font-weight: bold;
+  padding: 20rpx 0rpx 0 0;
+  box-sizing: border-box;
+}
+
+.xinXi>view:last-of-type {
+  flex: 1;
+  border-left: 1rpx solid #efefef;
+  margin-bottom: 2rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+
+.xinXi text {
+  border: 1rpx solid #fd9900;
+  color: #fd9900;
+  display: inline-block;
+  text-align: center;
+  line-height: 30rpx;
+  height: 30rpx;
+  width: 30rpx;
+  margin-right: 10rpx;
+}
+
+.bieName {
+  font-size: 28rpx;
+}
+
+.proQian {
+  color: #ffa800;
+  padding: 20rpx 0;
+}
+
+.proQian>text {
+  color: #999;
+  font-size: 24rpx;
+}
+
+.nei {
+  padding: 0 30rpx;
+}
+
+.guiGe {
+  font-size: 28rpx;
+  padding: 30rpx 0rpx;
+  border-top: 1rpx solid #efefef;
+  width: 690rpx;
+}
+
+.shu {
+  display: flex;
+  justify-content: space-between;
+  font-size: 28rpx;
+  padding: 0 0 30rpx;
+  margin-bottom: 20rpx;
+}
+
+.ping {
+  display: flex;
+  justify-content: space-between;
+  font-size: 28rpx;
+  padding: 30rpx 30rpx 20rpx;
+}
+
+.ping image {
+  width: 17rpx;
+  height: 29rpx;
+}
+
+.user {
+  display: flex;
+  padding: 20rpx 30rpx;
+}
+
+.user>view {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  line-height: 60rpx;
+  margin-right: 10rpx;
+}
+
+.user image {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.ping {
+  border-bottom: 1rpx solid #efefef;
+}
+
+.ping1>view {
+  padding: 0 30rpx 20rpx;
+  font-size: 24rpx;
+}
+
+.more {
+  font-size: 24rpx;
+  text-align: center;
+  padding: 20rpx 30rpx;
+  color: #999;
+  margin-bottom: 20rpx;
+  border-top: 1rpx solid #e8e8e8;
+}
+
+.xiangXi {
+  text-align: center;
+  font-size: 28rpx;
+  padding: 25rpx 30rpx;
+}
+
+.xiangXi>text {
+  font-weight: normal;
+}
+
+.pro-img image {
+  width: 750rpx;
+}
+
+.all-btm {
+  text-align: center;
+  font-size: 24rpx;
+  color: #999;
+  padding: 50rpx 30rpx 130rpx;
+  background: #f3f4f5;
+}
+
+.into {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100rpx;
+  font-size: 26rpx;
+  background: #fff;
+}
+
+.into image {
+  width: 35rpx;
+  height: 32rpx;
+  margin-bottom: 10rpx;
+}
+
+.into>view {
+  display: flex;
+  flex-direction: column;
+}
+
+.into>view:nth-child(1), .into>view:nth-child(2) {
+  font-size: 22rpx;
+  align-items: center;
+  text-align: center;
+  width: 125rpx;
+  padding-top: 15rpx;
+  color: #999;
+}
+
+.into>button:nth-child(3), .into>button:nth-child(4) {
+  line-height: 100rpx;
+  width: 250rpx;
+  text-align: center;
+  color: #fff;
+  border-radius: 0;
+}
+
+.into>button:nth-child(3) {
+  background: #0097ff;
+}
+
+.into>button:nth-child(4) {
+  background: #fd9900;
+}
+
+.into>button[disabled] {
+  background: #ccc;
+  color: #fff;
+}
+
+.num {
+  margin: 0;
+}
+
+info image {
+  vertical-align: middle;
+  padding-top: 10px;
+}
+
+info text {
+  vertical-align: middle;
+}
+
+.carbox {
+  position: relative;
+}
+
+.car-num {
+  position: absolute;
+  display: inline-block;
+  background: #f00;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 18rpx;
+  line-height: 32rpx;
+  width: 32rpx;
+  height: 32rpx;
+  text-align: center;
+  left: 70rpx;
+  top: 3rpx;
+}
+
+.descriptionContent {
+  padding: 10rpx;
+  font-size: 24rpx;
+  text-indent: 2em;
+}
+
+.no {
+  padding: 20rpx 0;
+  background: rgba(255,218,185,0.5);
+  text-align: center;
+  font-size: 26rpx;
+  position: fixed;
+  bottom: 100rpx;
+  width: 100%;
+  color: black;
+}

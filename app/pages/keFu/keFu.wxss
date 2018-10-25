@@ -1,0 +1,95 @@
+.cont_{
+  height: 100%;
+  
+}
+page{
+background: #f4f5f6;
+}
+.time,.kefu{
+  font-size: 24rpx;
+  color: #999;
+  line-height: 30rpx;
+  text-align: center;
+  padding-top: 30rpx;
+}
+.kefu{
+  color:#333;
+  margin-top: -20rpx;
+}
+.head>image{
+  height: 60rpx;
+  width: 60rpx;
+}
+.other,.my{
+  margin-top: 40rpx;
+}
+.talk{
+  margin-left: 10rpx;
+  width: auto;
+  padding-left: 20rpx;
+  margin-bottom: 25rpx;
+}
+.talk>view{
+  border:1rpx solid #cccccc;
+  height: auto;
+min-height: 40rpx;
+min-width: 30rpx;
+max-width: 450rpx;
+line-height: 40rpx;
+padding: 20rpx;
+color: #333;
+background: #fff;
+font-size:26rpx;
+border-radius: 5rpx;
+}
+.head{
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+}
+.other{
+  display: flex;
+}
+.my{
+  justify-content: flex-end;
+}
+.my .talk{
+  margin-left: 0;
+  margin-right: 10rpx;
+}
+.my .talk>view{
+  color: #fff;
+  background: #37ba03;
+}
+.input{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #fff;
+  height: 100rpx;
+  padding: 0 15rpx;
+  border-top:1rpx solid #e8e8e8;
+}
+.input{
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  align-items: center;
+}
+.input image{
+  width: 53rpx;
+  height: 53rpx;
+}
+.input input{
+  border:1rpx solid #ccc;
+  border-radius: 10rpx;
+  width: 510rpx;
+  height: 65rpx;
+  padding-left: 15rpx;
+}
+.input>view{
+  margin-left: 15rpx;
+}
+.input>view:first-child{
+  margin:0;
+}

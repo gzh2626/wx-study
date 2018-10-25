@@ -1,0 +1,17 @@
+<form>
+<view class='cont'>
+    <view>
+    <image class='phone' src='../img/phone.png'></image>
+    <input type='number' placeholder='请输入您的手机号' bindinput='tel'></input>
+    
+     <button type="button" class="fa {{is_show?'show':'hide'}}" bindtap="clickVerify">获取验证码</button>
+    <button type="button" class="fa {{is_show?'hide':'show'}}" disabled='true'>重新发送{{last_time}}s</button>
+    </view>
+    <view>
+    <image class='yzm' src='../img/yanZM.png'></image>
+    <input type='number' placeholder='请输入验证码' bindinput='code'></input>
+    </view>
+    <text>如果您是第一次绑定手机号，我们将为您创建船企生鲜账号。</text>
+    <button bindtap='login' disabled="{{!telRule||!codeRule||!getcode}}">登录</button>
+</view>
+</form>

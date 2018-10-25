@@ -1,0 +1,125 @@
+<view class='cont_'>
+  <scroll-view scroll-y='true' bindscrolltolower="onPull" style='height:{{scrollHeight}}px;'>
+    <!--顶部搜索-->
+    <view class='weizhi pd30'>
+      <view>
+
+        <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+          <image src="../img/weizhi.png"></image>
+          <text class="picker city">{{multiArray[1][multiIndex[1]]}}</text>
+        </picker>
+
+      </view>
+      <view class="section">
+        <input type="digit" placeholder="请输入关键字搜索" confirm-type="search" bindtap='focus' />
+        <view>
+          <image src="../img/search.png"></image>
+        </view>
+      </view>
+    </view>
+
+    <!--分类-->
+    <view class='index' style="height:auto;">
+
+      <view class="fenLei fenlei1">
+        <block wx:for="{{array}}">
+          <view bindtap='classify' data-id='{{item.id}}'>
+            <image src='{{item.src}}' mode='aspectFit'></image>
+            <text>{{item.message}}</text>
+          </view>
+        </block>
+      </view>
+    </view>
+
+
+
+    <!--当季爆款-->
+    <view class='hot1'>
+      <image src='../img/hot.png' class='hot' mode='aspectFit'></image>
+      <text class='djbk'>当季爆款</text>
+    </view>
+
+    <!--滚动爆款商品-->
+    <view style='background:#fff;padding-left:44rpx;'>
+      <scroll-view scroll-x="true" class='scroll' style="white-space: nowrap; display:flex;width:100% ">
+        <view class='item' wx:for="{{hot}}" bindtap='bao'>
+          <view class='img' bindtap='pro' data-id='{{item.id}}'>
+            <image src='{{item.img[0]}}' mode='aspectFill'></image>
+          </view>
+          <view class='name' bindtap='pro' data-id='{{item.id}}'>
+            <text>{{item.name}}</text>
+            <text>￥{{item.discountPrice}}</text>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+
+    <!--推荐菜品-->
+    <view class='hot1'>
+      <image src='../img/icon1.png' class='hot' mode='aspectFit'></image>
+      <text class='djbk'>推荐菜品</text>
+    </view>
+
+    <!--推荐菜品循环-->
+    <view class="tuijian1">
+      <view wx:for="{{tuiJian}}" class='tuijian'>
+        <view class='tuiJian-img' bindtap='detail' data-id='{{item.id}}' data-num='{{item.num}}'>
+          <image src='{{item.img[0]}}' mode='scaleToFill'></image>
+        </view>
+        <view class='tuiJian-text'>
+          <view bindtap='detail' data-id='{{item.id}}' data-num='{{item.num}}'>{{item.name}}</view>
+          <view class='tuijian-money'>
+            <view>￥{{item.discountPrice}}</view>
+            <!-- 增加减少数量按钮 -->
+            <view class='add'>
+              <view catchtap="minusCount" class='plus' data-id="{{item.id}}" data-index='{{index}}'>-</view>
+              <input value='{{item.num}}'></input>
+              <view catchtap="addCount" data-id="{{item.id}}" class='plus' data-index='{{index}}'>+</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+
+    <!--<view class='tuijian1' wx:for="{{array3}}">
+          <view class='tuijian' catchtap='pro'>
+            <view class='tuiJian-img'>
+              <image src='{{item.src1}}' mode='aspectFill'></image>
+            </view>
+            <view class='tuiJian-text'>
+              <view>{{item.message1}}</view>
+              <view class='tuijian-money'>
+                <view class='money'>{{item.qian}}</view>
+                        <view class='add'>
+                          <view class="redu" catchtap="minusCount" data-index="{{index}}">-</view>
+                          <input data-id="{{item.id}}" type="number" bindchange="addCount" value="{{item.num}}" />  
+                          <view class='plus' catchtap="bindPlus" data-index='{{index}}'>+</view>
+                        </view>
+              </view>
+            </view>
+          </view>
+          </view>-->
+  </scroll-view>
+
+</view>
+<view class="bottom-view" wx:if="{{goodList.length>0}}">
+  <view class="total-view">已选 {{total}} 件</view>
+  <view class="price-view">
+    合计
+    <text>￥{{totalPrice}}</text>
+    <view bindtap='toPay'>结算</view>
+  </view>
+</view>
+<view class="shade" hidden="{{!shadeShow}}">
+  <view class="box">
+    <text class="title">选择城市</text>
+    <text class='content'>你当前选择城市: <text style="color:#ffa800;">{{multiArray[1][0]}}</text></text>
+    <view class="cancel" bindtap='shadeHide'>
+      <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+        <text>重新选择</text>
+      </picker>
+    </view>
+    <view class="confirm" bindtap='shadeHide'>确定</view>
+  </view>
+</view>

@@ -1,0 +1,63 @@
+<view class='weizhi pd30'>
+    <view>
+    <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+      <image src="../img/weizhi.png"></image>
+      <text class="picker city">{{multiArray[1][multiIndex[1]]}}</text>
+    </picker>     
+    </view>
+    <view class="section">
+      <input type="digit" placeholder="请输入关键字搜索" confirm-type ="search" bindtap='focus'/>
+      <image src="../img/search.png"></image>
+    </view>
+</view>
+<view class='index'>
+    <view class="fenLei fenlei1">
+          <view wx:for="{{array}}">
+          <image src='{{item.src}}' mode='aspectFit'></image>
+          <text>{{item.message}}</text>
+          </view>  
+      </view>  
+    </view>
+    <view class="fenLei fenlei2">
+        <view wx:for="{{array1}}">
+            <image src='{{item.src1}}' mode='aspectFit'></image>
+            <text>{{item.message1}}</text>
+        </view>    
+    </view>
+    <view class='hot1'>
+        <image src='../img/hot.png' class='hot' mode='aspectFit'></image>
+        <text class='djbk'>当季爆款</text>
+    </view>
+    <scroll-view scroll-x="true" class='scroll' style="white-space: nowrap; display:flex ">
+      <view class='item' wx:for="{{array2}}">
+          <view class='img'>
+              <image src='{{item.src1}}' mode='aspectFill'></image>
+          </view>
+          <view class='name'>
+              <text>{{item.message1}}</text>
+              <text>{{item.qian}}</text>
+          </view>
+      </view>
+      </scroll-view>
+      <view class='hot1'>
+      <image src='../img/icon1.png' class='hot' mode='aspectFit'></image>
+      <text class='djbk'>推荐菜品</text>
+</view>
+<view class='tuijian1'>
+          <view class='tuijian' wx:for="{{array3}}" bindtap='pro' data-id='{{index}}'>
+            <view class='tuiJian-img'>
+              <image src='{{item.src1}}' mode='aspectFill'></image>
+            </view>
+            <view class='tuiJian-text'>
+              <view>{{item.message1}}</view>
+              <view class='tuijian-money'>
+                <view class='money'>{{item.qian}}</view>
+                        <view class='add'>
+                            <view class="redu {{minusStatus}}" bindtap="bindMinus">-</view>
+                            <input type="number" bindchange="bindManual" value="{{num}}" />  
+                            <view class='plus' bindtap="bindPlus" id='{{index}}'>+</view>
+                        </view>
+              </view>
+            </view>
+          </view>
+          </view>

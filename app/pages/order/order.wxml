@@ -1,0 +1,441 @@
+<wxs module="common" src="../../utils/common.wxs"></wxs>
+<view class='cont'>
+
+  <view class='tab pd30 swiper-tab'>
+    <view class="{{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">全部</view>
+    <view class="{{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">待付款</view>
+    <view class="{{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">待收货</view>
+    <view class="{{currentTab==3 ? 'on' : ''}}" data-current="3" bindtap="swichNav">待评价</view>
+    <view class="{{currentTab==4 ? 'on' : ''}}" data-current="4" bindtap="swichNav">售后</view>
+  </view>
+
+
+
+  <swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 31}}px" bindchange="bindChange">
+    <!-- 全部 -->
+    <block wx:for="{{[1,2,3,4,5]}}">
+      <swiper-item>
+        <!-- 订单1 -->
+        <scroll-view scroll-y='true' style='height:1060rpx;'>
+          <view class='one-d' wx:for='{{orderList}}' wx:for-item="order">
+            <view class='zhuangT pd30'>
+              <view>订单编号：{{order.orderNo}}</view>
+              <view wx:if="{{!order.isCustomerService}}">{{common.getStatus(order.status)}}</view>
+              <view wx:if="{{order.isCustomerService}}">已申请售后</view>
+            </view>
+            <view class='pro-mai' wx:for='{{order.goodsList}}' bindtap="goToDetail" data-order-id="{{order.id}}" wx:for-index="idx" wx:if="{{idx<3}}">
+              <view class='left'>
+                <view>
+                  <image src='{{item.goodsImg}}' mode='scaleToFill'></image>
+                </view>
+                <view class='pro-name'>
+                  <view>{{item.goodsName}}</view>
+                  <view>规格：{{item.specification}}</view>
+                </view>
+              </view>
+              <view class='right'>
+                <view>{{item.goodsDiscountPrice}}</view>
+                <view>×{{item.count}}</view>
+              </view>
+            </view>
+
+            <view class="more" wx:if="{{order.goodsList.length>3}}" bindtap="goToDetail" data-order-id="{{order.id}}">
+              查看全部商品
+            </view>
+            <view class='all-money pd30'>
+              <view>{{common.formatTime(order.createdAt)}}</view>
+              <view>共{{order.goodsList.length}}件商品 合计:￥
+                <text>{{order.totalAmount}}</text>
+              </view>
+            </view>
+
+            <view class='btn pd30'>
+              <view data-order-id='{{order.id}}' bindtap="confirmOrder" wx:if="{{order.status==3||order.status==7}}">确认收货</view>
+              <!-- <view>查看物流</view> -->
+              <view bindtap='payment' data-arr-index='{{index}}' wx:if="{{order.status==6}}">去支付</view>
+              <view data-order-id='{{order.id}}' bindtap="cancelOrder" wx:if="{{order.status==6}}">取消订单</view>
+              <navigator url="/pages/order-pingJia/order-pingJia?orderId={{order.id}}" wx:if="{{order.status==1}}">去评价</navigator>
+              <navigator style="margin-left:20rpx;" url="/pages/shouHou/shouHou?orderId={{order.id}}" wx:if="{{(order.status==1||order.status==8)&&!order.isCustomerService}}">申请售后</navigator>
+              <navigator url="/pages/order-wuLiu/order-wuLiu?orderId={{order.id}}" wx:if="{{order.status==3||order.status==1}}">查看物流</navigator>
+            </view>
+          </view>
+          <view class='no-dingdan' wx:if="{{orderList.length==0}}">
+            <image src='../img/no-dingdan.png'></image>
+            <view>您还没有相关的订单</view>
+          </view>
+        </scroll-view>
+      </swiper-item>
+      <!-- <view class='one-d'>
+          <view class='zhuangT pd30'>
+            <view>订单编号：{{12345678}}</view>
+            <view>待付款</view>
+          </view>
+          <view class='pro-mai' wx:for='{{array1}}'>
+            <view class='left'>
+              <view>
+                <image src='{{item.src}}' mode='scaleToFill'></image>
+              </view>
+              <view class='pro-name'>
+                <view>{{item.title}}</view>
+                <view>{{item.guiGe}}</view>
+              </view>
+            </view>
+            <view class='right'>
+              <view>￥18.00</view>
+              <view>×{{1}}</view>
+            </view>
+          </view>
+
+
+
+          <view class='all-money pd30'>
+            <view>2017-11-08　23:00:01</view>
+            <view>共{{4}}件商品 合计:￥
+              <text>{{72.00}}</text>
+            </view>
+          </view>
+          <view class='btn pd30'>
+            <view>取消订单</view>
+            <view>去支付</view>
+          </view>
+        </view>
+        <view class='one-d'>
+          <view class='zhuangT pd30'>
+            <view>订单编号：{{12345678}}</view>
+            <view>取消</view>
+          </view>
+          <view class='pro-mai' wx:for='{{array1}}'>
+            <view class='left'>
+              <view>
+                <image src='{{item.src}}' mode='scaleToFill'></image>
+              </view>
+              <view class='pro-name'>
+                <view>{{item.title}}</view>
+                <view>{{item.guiGe}}</view>
+              </view>
+            </view>
+            <view class='right'>
+              <view>￥18.00</view>
+              <view>×{{1}}</view>
+            </view>
+          </view>
+
+
+
+          <view class='all-money pd30'>
+            <view>2017-11-08　23:00:01</view>
+            <view>共{{4}}件商品 合计:￥
+              <text>{{72.00}}</text>
+            </view>
+          </view>
+        </view> -->
+    </block>
+    <!-- 
+    <swiper-item>
+      <scroll-view scroll-y='true' style='height:1060rpx;'>
+        <view class='one-d'>
+          <view class='zhuangT pd30'>
+            <view>订单编号：{{12345678}}</view>
+            <view>待付款</view>
+          </view>
+          <view class='pro-mai' wx:for='{{array1}}' bindtap='daiFuKuan'>
+            <view class='left'>
+              <view>
+                <image src='{{item.src}}' mode='scaleToFill'></image>
+              </view>
+              <view class='pro-name'>
+                <view>{{item.title}}</view>
+                <view>{{item.guiGe}}</view>
+              </view>
+            </view>
+            <view class='right'>
+              <view>￥188.00</view>
+              <view>×{{1}}</view>
+            </view>
+          </view>
+
+
+
+          <view class='all-money pd30'>
+            <view>2017-11-08　23:00:01</view>
+            <view>共{{4}}件商品 合计:￥
+              <text>{{72.00}}</text>
+            </view>
+          </view>
+          <view class='btn pd30'>
+            <view>去支付</view>
+            <view>取消订单</view>
+          </view>
+        </view>
+
+        <view class='one-d'>
+          <view class='zhuangT pd30'>
+            <view>订单编号：{{12345678}}</view>
+            <view>待付款</view>
+          </view>
+          <view class='pro-mai' wx:for='{{array1}}' bindtap='daiFuKuan'>
+            <view class='left'>
+              <view>
+                <image src='{{item.src}}' mode='scaleToFill'></image>
+              </view>
+              <view class='pro-name'>
+                <view>{{item.title}}</view>
+                <view>{{item.guiGe}}</view>
+              </view>
+            </view>
+            <view class='right'>
+              <view>￥18.00</view>
+              <view>×{{1}}</view>
+            </view>
+          </view>
+
+
+
+          <view class='all-money pd30'>
+            <view>2017-11-08　23:00:01</view>
+            <view>共{{4}}件商品 合计:￥
+              <text>{{72.00}}</text>
+            </view>
+          </view>
+          <view class='btn pd30'>
+            <view>其支付</view>
+            <view>取消订单</view>
+          </view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item>
+
+      <scroll-view scroll-y='true' style='height:1060rpx;'>
+        <view class='one-d'>
+          <view class='zhuangT pd30'>
+            <view>订单编号：{{12345678}}</view>
+            <view>待收货</view>
+          </view>
+          <view class='pro-mai' wx:for='{{array1}}' bindtap='daiShouHuo'>
+            <view class='left'>
+              <view>
+                <image src='{{item.src}}' mode='scaleToFill'></image>
+              </view>
+              <view class='pro-name'>
+                <view>{{item.title}}</view>
+                <view>{{item.guiGe}}</view>
+              </view>
+            </view>
+            <view class='right'>
+              <view>￥18.00</view>
+              <view>×{{1}}</view>
+            </view>
+          </view>
+
+
+
+          <view class='all-money pd30'>
+            <view>2017-11-08　23:00:01</view>
+            <view>共{{4}}件商品 合计:￥
+              <text>{{72.00}}</text>
+            </view>
+          </view>
+          <view class='btn pd30'>
+            <view>确认收货</view>
+            <view>查看物流</view>
+          </view>
+        </view>
+
+        <view class='one-d'>
+          <view class='zhuangT pd30'>
+            <view>订单编号：{{12345678}}</view>
+            <view>待收货</view>
+          </view>
+          <view class='pro-mai' wx:for='{{array1}}' bindtap='daiShouHuo'>
+            <view class='left'>
+              <view>
+                <image src='{{item.src}}' mode='scaleToFill'></image>
+              </view>
+              <view class='pro-name'>
+                <view>{{item.title}}</view>
+                <view>{{item.guiGe}}</view>
+              </view>
+            </view>
+            <view class='right'>
+              <view>￥18.00</view>
+              <view>×{{1}}</view>
+            </view>
+          </view>
+
+
+
+          <view class='all-money pd30'>
+            <view>2017-11-08　23:00:01</view>
+            <view>共{{4}}件商品 合计:￥
+              <text>{{72.00}}</text>
+            </view>
+          </view>
+          <view class='btn pd30'>
+            <view>确认收货</view>
+            <view>查看物流</view>
+          </view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item>
+      <scroll-view scroll-y='true' style='height:1060rpx;'>
+        <view class='one-d'>
+          <view class='zhuangT pd30'>
+            <view>订单编号：{{12345678}}</view>
+            <view>待评价</view>
+          </view>
+          <view class='pro-mai' wx:for='{{array1}}' bindtap='daiPingJia'>
+            <view class='left'>
+              <view>
+                <image src='{{item.src}}' mode='scaleToFill'></image>
+              </view>
+              <view class='pro-name'>
+                <view>{{item.title}}</view>
+                <view>{{item.guiGe}}</view>
+              </view>
+            </view>
+            <view class='right'>
+              <view>￥18.00</view>
+              <view>×{{1}}</view>
+            </view>
+          </view>
+
+
+
+          <view class='all-money pd30'>
+            <view>2017-11-08　23:00:01</view>
+            <view>共{{4}}件商品 合计:￥
+              <text>{{72.00}}</text>
+            </view>
+          </view>
+          <view class='btn pd30'>
+            <view>去评价</view>
+          </view>
+        </view>
+
+        <view class='one-d'>
+          <view class='zhuangT pd30'>
+            <view>订单编号：{{12345678}}</view>
+            <view>待评价</view>
+          </view>
+          <view class='pro-mai' wx:for='{{array1}}' bindtap='daiPingJia'>
+            <view class='left'>
+              <view>
+                <image src='{{item.src}}' mode='scaleToFill'></image>
+              </view>
+              <view class='pro-name'>
+                <view>{{item.title}}</view>
+                <view>{{item.guiGe}}</view>
+              </view>
+            </view>
+            <view class='right'>
+              <view>￥18.00</view>
+              <view>×{{1}}</view>
+            </view>
+          </view>
+
+
+
+          <view class='all-money pd30'>
+            <view>2017-11-08　23:00:01</view>
+            <view>共{{4}}件商品 合计:￥
+              <text>{{72.00}}</text>
+            </view>
+          </view>
+          <view class='btn pd30'>
+            <view>去评价</view>
+          </view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+
+    <swiper-item>
+
+      <scroll-view scroll-y='true' style='height:1060rpx;'>
+        <view class='one-d'>
+          <view class='zhuangT pd30'>
+            <view>订单编号：{{12345678}}</view>
+            <view>已申请售后</view>
+          </view>
+          <view class='pro-mai' wx:for='{{array1}}' bindtap='pro'>
+            <view class='left'>
+              <view>
+                <image src='{{item.src}}' mode='scaleToFill'></image>
+              </view>
+              <view class='pro-name'>
+                <view>{{item.title}}</view>
+                <view>{{item.guiGe}}</view>
+              </view>
+            </view>
+            <view class='right'>
+              <view>￥18.00</view>
+              <view>×{{1}}</view>
+            </view>
+          </view>
+
+
+
+          <view class='all-money pd30'>
+            <view>2017-11-08　23:00:01</view>
+            <view>共{{4}}件商品 合计:￥
+              <text>{{72.00}}</text>
+            </view>
+          </view>
+          <view class='btn pd30'>
+            <view bindtap='pingJia'>去评价</view>
+          </view>
+        </view>
+
+        <view class='one-d'>
+          <view class='zhuangT pd30'>
+            <view>订单编号：{{12345678}}</view>
+            <view>已申请售后</view>
+          </view>
+          <view class='pro-mai' wx:for='{{array1}}' bindtap='pro'>
+            <view class='left'>
+              <view>
+                <image src='{{item.src}}' mode='scaleToFill'></image>
+              </view>
+              <view class='pro-name'>
+                <view>{{item.title}}</view>
+                <view>{{item.guiGe}}</view>
+              </view>
+            </view>
+            <view class='right'>
+              <view>￥18.00</view>
+              <view>×{{1}}</view>
+            </view>
+          </view>
+
+
+
+          <view class='all-money pd30'>
+            <view>2017-11-08　23:00:01</view>
+            <view>共{{4}}件商品 合计:￥
+              <text>{{72.00}}</text>
+            </view>
+          </view>
+
+        </view>
+      </scroll-view> 
+    </swiper-item>-->
+
+
+
+
+  </swiper>
+
+
+
+  <view>
+
+
+    <view>
+
+    </view>
+  </view>
+
+
+
+</view>

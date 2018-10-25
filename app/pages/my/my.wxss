@@ -1,0 +1,76 @@
+.efefef{
+  height: 100vh;
+  background: #efefef;
+}
+.my{
+  display: flex;
+  padding: 25rpx 30rpx;
+  border-bottom: 1rpx solid #e8e8e8;
+  background: #fff;
+}
+.my>view:first-child{
+  width: 150rpx;
+  height: 150rpx;
+  border-radius:50%;
+  overflow: hidden;
+  margin-right: 20rpx;
+}
+.my image{
+    width: 100%;
+    height: 100%;
+}
+.msg{
+  margin-top: 38rpx;
+}
+.name{
+  font-size: 34rpx;
+  font-weight: bold;
+}
+.hao{
+  font-size: 24rpx;
+}
+.jifen{
+  background: #fff;
+  height: 80rpx;
+  line-height: 80rpx;
+  display: flex;
+  font-size: 28rpx;
+  padding-right: 50rpx;
+  justify-content: space-between;
+}
+.dingD{
+  height: 80rpx;
+  line-height: 80rpx;
+  display: flex;
+  justify-content: space-between;
+  font-size: 28rpx;
+  background: #fff;
+  border-bottom: 1rpx solid #e8e8e8;
+}
+.dingD image{
+  vertical-align: sub;
+  margin-right: 20rpx;
+}
+.rt{
+  display: flex;
+  font-size: 30rpx;
+  color: #0097ff;
+  line-height: 48rpx;
+  align-items: center
+}
+.rt>image{
+  margin-left: 20rpx;
+}
+.tuichu{
+  padding: 0 30rpx;
+  background: #fff;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 28rpx;
+}
+.dingD text{
+  color:red;
+  height: 80rpx;
+  line-height: 80rpx;
+  display: inline-block;
+}

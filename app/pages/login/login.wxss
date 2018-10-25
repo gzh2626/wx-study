@@ -1,0 +1,57 @@
+.cont{
+  background: #f4f5f6;
+  height: 100vh;
+  padding-top: 20rpx;
+  text-align: center;
+}
+.cont>view{
+  background: #fff;
+height: 100rpx;
+text-align: left;
+padding:0 30rpx;
+display: flex;
+align-items: center;
+}
+.cont>view:first-of-type{
+  border-bottom: 1rpx solid #e8e8e8;
+
+}
+.cont>text{
+  font-size: 24rpx;
+  color:#333;
+}
+.cont>button{
+  background: #0097ff;
+  color: white;
+  width: 690rpx;
+  margin: 60rpx auto 0;
+}
+.phone{
+width: 24rpx;
+height: 44rpx;
+margin-right: 16rpx;
+}
+.yzm{
+width: 37rpx;
+height: 34rpx;
+}
+input{
+  width: 500rpx;
+  padding-left: 30rpx;
+  font-size: 28rpx;
+}
+.fa{
+  width: 150rpx;
+  height: 50rpx;
+  color: white;
+background: #0097ff;
+font-size: 24rpx;
+padding: 0;
+line-height: 50rpx;
+}
+
+form .cont button[disabled]{
+  opacity:0.65;
+  background: #0097ff;
+  color:#fff;
+}

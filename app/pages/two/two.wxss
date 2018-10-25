@@ -1,0 +1,289 @@
+.search {
+  width: 100%;
+  height: 90rpx;
+  background: #0097ff;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  align-items: center;
+}
+
+.search>view {
+  background: #fff;
+  border-radius: 29rpx;
+  height: 58rpx;
+  width: 100%;
+  display: flex;
+}
+
+.search input {
+  width: 85%;
+  font-size: 22rpx;
+  padding-left: 29rpx;
+  height: 58rpx;
+}
+
+.search-img {
+  width: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 29rpx;
+  height: 58rpx;
+}
+
+.search image {
+  width: 27rpx;
+  height: 28rpx;
+}
+
+.biao {
+  display: flex;
+  height: 100%;
+  overflow: hidden;
+}
+
+.left {
+  width: 21.2%;
+  font-size: 26rpx;
+  border-right: 1rpx solid #e8e8e8;
+  position: fixed;
+  left: 0;
+  top: 90rpx;
+  height: 100%;
+}
+
+.left>view {
+  margin: 40rpx 0;
+  padding: 10rpx 0 10rpx 20rpx;
+  line-height: 40rpx;
+  border-left: 6rpx solid transparent;
+}
+
+/* .active {
+  padding-left: 20rpx;
+  line-height: 40rpx;
+} */
+
+.left>view.active {
+  border-left: 6rpx solid #0097ff;
+  color: #0097ff;
+}
+
+.right {
+  width: 78.8%;
+  margin-left: 21.2%;
+  margin-top: 90rpx;
+  margin-bottom: 80rpx;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30rpx;
+  border-bottom: 1rpx solid #e8e8e8;
+  position: fixed;
+  top: 90rpx;
+  z-index: 1000;
+  background: #fff;
+  width: 78.8%;
+  box-sizing: border-box;
+  border-left: 1rpx solid #e8e8e8;
+}
+
+.top .all {
+  width: 100%;
+}
+
+.top>view {
+  font-size: 26rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+}
+
+.top1 image {
+  width: 20rpx;
+  height: 11rpx;
+  vertical-align: middle;
+  margin-left: 10rpx;
+}
+.top2{
+  width:50%;
+  text-align: center;
+}
+.top2 image {
+  width: 13rpx;
+  height: 20rpx;
+  margin-left: 10rpx;
+}
+
+.right-btm {
+  margin-top: 90rpx;
+}
+
+.item {
+  display: flex;
+  padding: 0 30rpx 0 20rpx;
+  box-sizing: border-box;
+  border-bottom: 1rpx solid #e8e8e8;
+  height: auto;
+}
+
+.item>view:first-child {
+  flex: 17;
+  padding: 20rpx 0;
+}
+
+.item>view:last-child {
+  flex: 38;
+  padding: 20rpx 0 20rpx 20rpx;
+}
+
+.img {
+  width: 170rpx;
+  height: 170rpx;
+  border-radius: 5rpx;
+}
+
+.img>image {
+  width: 170rpx;
+  height: 170rpx;
+  background: #f3f4f5;
+  border-radius: 5rpx;
+}
+
+.intro {
+  font-size: 24rpx;
+}
+
+.intro>view:first-of-type {
+  height: 66rpx;
+  overflow: hidden;
+  line-height: 33rpx;
+  width: 100%;
+}
+
+.intro>view:not(:first-of-type) {
+  margin-top: 10rpx;
+}
+
+.money {
+  display: flex;
+  justify-content: space-between;
+}
+
+.money_ {
+  flex-direction: row;
+  display: table-cell;
+  vertical-align: bottom;
+}
+
+.money>view:first-child {
+  font-size: 30rpx;
+  color: #fd9900;
+  font-weight: 400;
+}
+
+.money text {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.intro>view:nth-child(2) {
+  color: #999;
+}
+
+.intro>view:last-child {
+  color: #999;
+  margin-top: 0rpx;
+}
+
+.top1 {
+  position: relative;
+}
+
+.all {
+  position: absolute;
+  top: 90rpx;
+  left: 0;
+}
+
+.all>view {
+  border-bottom: 1rpx solid #e8e8e8;
+  height: 90rpx;
+  line-height: 90rpx;
+  padding-left: 30rpx;
+  z-index: 10000;
+  background: #fafafa;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.num {
+  line-height: 35rpx;
+  margin: 0 15rpx;
+}
+
+.add>input {
+  color: #333;
+}
+
+.normal {
+  background: #fafafa;
+}
+
+.active {
+  background: #fff;
+}
+
+.xian {
+  font-size: 24rpx;
+  color: #fda734;
+}
+
+.bottom-view {
+  height: 80rpx;
+  background: #fff;
+  width: 100%;
+  position: fixed;
+  z-index:20;
+  bottom: 0;
+  border-top: 1px solid #edeaea;
+}
+
+.bottom-view .total-view {
+  float: left;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  padding: 0 30rpx;
+}
+
+.bottom-view .price-view {
+  float: right;
+  line-height: 80rpx;
+  font-size: 28rpx;
+}
+
+.bottom-view .price-view text {
+  color: #fda734;
+  font-size: 34rpx;
+}
+
+.bottom-view .price-view view {
+  display: inline-block;
+  width: 160rpx;
+  margin-left: 25rpx;
+  text-align: center;
+  background: #0097ff;
+  color: #fff;
+}

@@ -1,0 +1,40 @@
+<wxs module="common" src="../../utils/common.wxs"></wxs>
+<view class='cont'>
+
+
+  <view class='all pd30'>全部评价（<text>{{count}}</text> ）
+  </view>
+
+
+  <view class='all-ping pd30'>
+    <view>
+
+      <view class='zu' wx:for='{{commentArray}}'>
+        <view class='man'>
+          <view>
+            <view>
+              <image src='{{item.userHeadImg}}'></image>
+            </view>
+            <view>{{item.userName}}</view>
+          </view>
+          <view>{{common.formatTime(item.createdAt)}}</view>
+        </view>
+        <view class="star-box">
+          <block wx:for="{{[1, 2, 3,4,5]}}" wx:for-item="i">
+            <!-- <image src='../img/star.png'></image> -->
+            <view wx:if="{{item.starCount >= i}}" class='star'>
+              <view class='star1'>
+                <image src='../img/star.png'></image>
+              </view>
+            </view>
+          </block>
+        </view>
+
+        <view class='pingjia'>{{item.content}}</view>
+      </view>
+
+
+    </view>
+  </view>
+  <view class='no-more'>没有更多了~</view>
+</view>

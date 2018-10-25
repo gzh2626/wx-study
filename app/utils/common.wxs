@@ -1,0 +1,67 @@
+var formatTime = function (time) {
+  var date = getDate(time);
+  var year = date.getFullYear();
+  var month = (date.getMonth() + 1).toString().length > 1 ? (date.getMonth() + 1) : ('0' + (date.getMonth() + 1));;
+  var day = date.getDate().toString().length > 1 ? date.getDate() : ('0' + date.getDate());
+  var hour = date.getHours().toString().length > 1 ? date.getHours() : ('0'+date.getHours());
+  var minute = date.getMinutes().toString().length > 1 ? date.getMinutes() : ('0' + date.getMinutes());
+  var second = date.getSeconds().toString().length > 1 ? date.getSeconds() : ('0' + date.getSeconds());
+  
+  return year + '-' + month + '-' + day + '\t' +hour+':'+minute+':'+second
+}
+
+var getStatus = function (status) {
+  var title;
+  switch (status) {
+    case 1:
+      title = '待评价';
+      break
+    case 6:
+      title = '待付款';
+      break
+    case 7:
+      title = '待发货';
+      break
+    case 3:
+      title = '待收货';
+      break
+    case 2:
+      title = '已取消';
+      break
+    case 8:
+      title = '已评价';
+      break
+  }
+  return title;
+}
+var getSrc = function (status) {
+  var src;
+  switch (status) {
+    case 1:
+      src = '../img/daiPingJia-img.png';
+      break
+    case 6:
+      src = '../img/dan-detail.png';
+      break
+    case 7:
+      src = '../img/shouHuo.png';
+      break
+    case 3:
+      src = '../img/shouHuo.png';
+      break
+    case 8:
+      src = '../img/success.png';
+      break
+  }
+  return src;
+}
+
+var setPrice=function(num){
+  return Number(num).toFixed(2);
+}
+module.exports = {
+  getStatus: getStatus,
+  formatTime: formatTime,
+  getSrc: getSrc,
+  setPrice: setPrice
+}  

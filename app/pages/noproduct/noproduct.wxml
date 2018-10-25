@@ -1,0 +1,65 @@
+<view class='pro'>
+    <swiper indicator-dots="{{indicatorDots}}"
+      autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{imgUrls}}">
+          <swiper-item class='swiper'>
+            <image src="{{item}}" class="slide-image"/>
+          </swiper-item>
+      </block>
+    </swiper>
+    <view class='tip'>
+          <view>
+          <image src='../img/chanDi.png'></image>
+          <text>产地直供</text>
+          </view>
+          <view>
+          <image src='../img/mian.png'></image>
+          <text>免运费</text>
+          </view>
+          <view>
+          <image src='../img/zheng.png'></image>
+          <text>正品低价</text>
+          </view>
+          <view>
+          <image src='../img/shouHou.png'></image>
+          <text>售后无忧</text>
+          </view>
+      </view>
+    <view class='nei'>
+      <view class='xinXi'>
+          <view>
+              <text>限</text>
+              <text>特</text>
+              新鲜蔬菜 圆生菜 沙拉菜 球生菜西餐色拉菜 新鲜农产品蔬菜500g
+          </view>
+          <view>月售289笔</view>
+      </view>
+      <view class='bieName'>别名：圆白菜</view>
+      <view class='proQian'>
+      ￥100.00
+      <text>￥24.00</text>
+      </view>
+     <view class='guiGe'> 规格：1.2斤</view>
+     <view class='shu'>
+        <view class='num'>数量：</view>
+        <view class='add'>
+                    <view class='plus' bindtap='add'>+</view>
+        </view>
+     </view>
+    </view>  
+        
+    </view>
+    <view class='into into1'>
+        <view>
+        <image src='../img/keFu.png'></image>
+        <text>客服</text>
+        </view>
+        <view>
+        <image src='../img/shopCar.png'></image>
+        <text>购物车</text>
+        </view>
+        <view>立即购买</view>
+        <view>加入购物车</view>
+    </view>
+     <view class='no'>该商品暂时无货，请耐心等待。</view>
+    

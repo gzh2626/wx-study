@@ -1,0 +1,9 @@
+{
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#0097ff",
+    "navigationBarTitleText": "商品详情页",
+    "navigationBarTextStyle": "#fff",
+    "backgroundColor": "#000000"
+  }
+}

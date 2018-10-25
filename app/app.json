@@ -1,0 +1,73 @@
+{
+  "pages": [   
+    "pages/index/index",
+    "pages/two/two",
+    "pages/login/login",
+    "pages/111111/111111",
+    "pages/cart/cart",
+    "pages/product/product",
+    "pages/searchNo/searchNo",
+    "pages/searchHas/searchHas",
+    "pages/search/search",
+    "pages/order-pingJia/order-pingJia",
+    "pages/order/order",
+    "pages/my/my",
+    "pages/shouHou/shouHou",
+    "pages/order-daiPingJia/order-daiPingJia",
+    "pages/order-daiShouHuo/order-daiShouHuo",
+    "pages/order-success/order-success",
+    "pages/keFu/keFu",
+    "pages/order-tiJiao/order-tiJiao",
+    "pages/order-none/order-none",
+    "pages/orderDetail/orderDetail",
+    "pages/no-order/no-order",
+    "pages/jiFen/jiFen",
+    "pages/pingJia/pingJia",
+    "pages/car-NOlogin/car-NOlogin",
+    "pages/car-kong/car-kong",
+    "pages/logs/logs",
+    "pages/noproduct/noproduct",
+    "pages/myNo/myNo",
+    "pages/order-wuLiu/order-wuLiu"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#0097ff",
+    "navigationBarTitleText": "船企生鲜",
+    "navigationBarTextStyle": "#fff",
+    "backgroundColor": "#fff",
+    "enablePullDownRefresh":true
+  },
+  "tabBar": {
+    "color": "#999",
+    "backgroundColor": "#fff",
+    "borderStyle": "black",
+    "selectedColor": "#0097ff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "pages/img/shouYe1.png",
+        "selectedIconPath": "pages/img/shouYe.png"
+      },
+      {
+        "pagePath": "pages/two/two",
+        "text": "分类",
+        "iconPath": "pages/img/fenLei.png",
+        "selectedIconPath": "pages/img/fenlei1.png"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "text": "购物车",
+        "iconPath": "pages/img/car.png",
+        "selectedIconPath": "pages/img/car1.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "pages/img/my.png",
+        "selectedIconPath": "pages/img/my1.png"
+      }
+    ]
+  }
+}

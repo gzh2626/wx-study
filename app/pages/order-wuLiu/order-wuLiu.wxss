@@ -1,0 +1,60 @@
+
+.yunShu{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx 30rpx;
+  background: #fff;
+}
+.yunShu>view{
+  display: flex;
+  font-size: 26rpx;
+  align-items: center;
+  color: #999;
+}
+.yunShu text{
+  color: #333;
+}
+.pei{
+  margin-left: 20rpx;
+}
+#ing{
+  font-size: 34rpx;
+  color: #0097ff;
+}
+.wuLiu1{
+  background: #fff;
+  flex-direction: column;
+  padding-left: 60rpx;
+  padding-top: 5rpx;
+}
+.duan{
+  position: relative;
+  padding-left: 50rpx;
+  margin-top:40rpx;
+}
+.duan .bule-dot{
+  width: 24rpx;
+  height:24rpx;
+  position: absolute;
+  left:10rpx;
+  border-radius: 50%;
+  background: #0097ff;
+  top:0rpx;
+}
+.addr-dot{
+  font-size: 26rpx;
+
+}
+.time{
+  font-size: 24rpx;
+  margin-top:10rpx;
+  color: #999;
+}
+.line{
+  border-left: 1rpx dashed #ccc;
+  height: 100rpx;
+  position: absolute;
+  left: 22rpx;
+  top:24rpx;
+}

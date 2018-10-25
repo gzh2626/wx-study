@@ -1,0 +1,21 @@
+<view class='pd30 weizhi1'>
+  <view class="section1">
+    <input type="text" placeholder="请输入关键字搜索" confirm-type="search" bindinput ="searchInput"  bindconfirm="search"/>
+    <view bindtap='search'>
+      <image src="../img/search.png"></image>
+    </view>
+  </view>
+  <view class='dis' bindtap='back'>取消</view>
+</view>
+<view class='delete pd30'>
+  <text>搜索记录</text>
+  <image src='../img/delete.png'></image>
+</view>
+
+<view class='pd30 name' wx:for='{{searchArray}}'>
+  <view bindtap='search' data-str='{{item}}'>{{item}}</view>
+</view>
+
+<view class='pd30 name' wx:if='{{searchArray==0}}'>
+  <view>暂无搜索记录</view>
+</view>

@@ -1,0 +1,5 @@
+<view class='car'>
+<image src='../img/car-no.png'></image>
+<view>购物车是空的哦~</view>
+<view>购物车内的商品仅保留一天</view>
+</view>

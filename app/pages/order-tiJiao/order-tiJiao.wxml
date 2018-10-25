@@ -1,0 +1,87 @@
+<wxs module="common" src="../../utils/common.wxs"></wxs>
+<view class='cont_'>
+
+  <view class='tiJiao pd30'>
+    <view>
+      <image src='../img/zhanDian.png' style='width:38rpx;height:50rpx;'></image>
+    </view>
+    <view>
+      <view>提货站点</view>
+
+      <block wx:for='{{stationArray}}'>
+        <view class='name'>
+          <!--class='{{item.id==stationId?"active":""}}'  -->
+          <view class='{{item.id==stationId?"active":""}}' bindtap='selectStation' data-id='{{item.id}}' data-place='{{item.name}}'>
+            {{item.name}}
+          </view>
+        </view>
+      </block>
+
+
+    </view>
+  </view>
+
+  <view class='tiJiao pd30'>
+    <view>
+      <image src='../img/pay.png' style='width:40rpx;height:40rpx;'></image>
+    </view>
+    <view>
+      <view>支付方式</view>
+      <view class='name'>
+        <view class='{{payType==1?"active":""}}' bindtap='payWay' data-payType='1'>全款支付</view>
+        <view class='{{payType==0?"active":""}}' bindtap='payWay' data-payType='0' wx:if="{{totalPrice>0.1}}">30%定金</view>
+      </view>
+    </view>
+  </view>
+  <view class='pd30 heji_ mb20' hidden='{{payType==0}}'>
+    全部支付需付款金额:
+    <text>￥{{totalPrice}}</text>
+  </view>
+  <view class='pd30 heji_ mb20' hidden='{{payType==1}}'>
+    定金支付需付款金额:
+    <text>￥{{common.setPrice(totalPrice*0.3)}}</text>
+  </view>
+
+  <!--商品-->
+  <view class='one-d_' wx:for='{{cartArray}}'>
+    <view>
+      <view class='pro-mai_'>
+        <view class='left_'>
+          <view>
+            <image src='{{item.goodsImg}}' mode='scaleToFill'></image>
+          </view>
+          <view class='pro-name_'>
+            <view>{{item.goodsName}}</view>
+            <view>规格: {{item.goodsSpecification}}</view>
+          </view>
+        </view>
+        <view class='right_'>
+          <view>￥{{item.goodsDiscountPrice}}</view>
+          <view>×{{item.count}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!--商品总额-->
+  <view class='zongE pd30'>
+    <view>商品总额:</view>
+    <view>￥
+      <text>{{totalPrice}}</text>
+    </view>
+  </view>
+  <!--运费-->
+  <view class='zongE pd30'>
+    <view>运费:</view>
+    <view>免运费</view>
+  </view>
+  <view class='zongE dan-heji_ pd30 mb20'>
+    <view> 本次需支付：￥
+      <text hidden='{{payType==0}}'>{{totalPrice}}</text>
+      <text hidden='{{payType==1}}'>{{common.setPrice(totalPrice*0.3)}}</text>
+    </view>
+  </view>
+
+
+  <button bindtap='submit'>提交订单</button>
+
+</view>

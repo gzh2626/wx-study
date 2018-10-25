@@ -1,0 +1,136 @@
+<view class='cont_'>
+
+
+<view class='state_ border-btm'>
+  <view>待评价</view>
+  <view>
+  <image src='../img/daiPingJia-img.png'></image>
+  </view>
+</view>
+<view class='state_ wuLiu mb20'>
+  <view class='add_'>
+    <image src='../img/wuLiu-img.png'></image>
+    <view>
+      <view>南京南钢提货点签收</view>
+      <view class='wuLiu-time'>2017-11-04  02:19:20</view>
+    </view>
+  </view>
+  <view class='jianRight'>
+  <image src='../img/jian.png'></image>
+  </view>
+</view>
+
+ <!--订单详情-->
+<view>
+
+  <view class='ding-num_ pd30'>
+  <view>订单编号：<text>122343543</text></view>
+  <view>2017-11-08  23:00:01</view>
+  </view>
+  <!--筛选条-->
+  <scroll-view scroll-x class="my-scroll_">
+        <view id="img1_" class="s-item_ pd30">
+          全部
+          <image src='../img/btm-jian.png'></image>
+        </view>
+        <view id="img2_" class="s-item_">
+          新鲜蔬菜
+        </view>
+        <view id="img3_" class="s-item_">
+          肉禽
+        </view>
+        <view id="img4_" class="s-item_">
+          水产冻货
+        </view>
+        <view id="img5_" class="s-item_">
+          蛋品豆面
+        </view>
+        <view id="img6_" class="s-item_">
+          米面粮油
+        </view>
+        <view id="img7_" class="s-item_">
+          休闲酒饮
+        </view>
+        <view id="img8_" class="s-item_">
+          调料干货
+        </view>
+        <view id="img3_" class="s-item_">
+          时令水果
+        </view>
+      </scroll-view>  
+      <view class='pd30 heji_'>
+          全部：采购
+          <text>4</text>种商品,共
+          <text>7</text>件,合计￥
+          <text>176.00</text>
+       </view>
+       <!--商品-->
+      <view class='one-d_' wx:for='{{array1}}'>
+          <view>
+            <view class='pro-mai_' bindtap='pro'>
+                <view class='left_'>
+                    <view>
+                      <image src='{{item.src}}' mode='scaleToFill'></image>
+                    </view>
+                  <view class='pro-name_'>
+                    <view>{{item.title}}</view>
+                    <view>{{item.guiGe}}</view>
+                  </view>
+                </view>
+                <view class='right_'>
+                  <view>￥18.00</view>
+                  <view>￥28.00</view>
+                  <view>×{{1}}</view>
+                </view>
+              </view>
+              <view class='sQing pd30'>
+                  <view class='BTN'>申请售后</view>
+              </view>
+          </view>
+
+          <view class='all-money_ pd30'>
+          <view>合计：￥<text>{{72.00}}</text></view>
+          </view>
+      </view>
+      <!--商品总额-->
+      <view class='zongE pd30'>
+      <view>商品总额:</view>
+      <view>￥<text>{{52.5}}</text></view>
+      </view>
+      <!--运费-->
+      <view class='zongE pd30'>
+      <view>运费:</view>
+      <view>免运费</view>
+      </view>
+       <view class='zongE dan-heji_ pd30 mb20'>
+          <view> 合计：￥<text>{{72.00}}</text></view>
+          </view>
+
+          <!--支付方式-->
+          <view class='pay_ mb20'>
+            <view class='pd30'>支付方式：</view>
+            <view class='pd30'>
+              <view>定金</view>
+              <view>￥<text>38.00</text></view>
+            </view>
+            <view class='pd30'>
+              <view>尾款:</view>
+              <view>￥<text>36.50</text></view>
+            </view>
+          </view>
+
+          <!--返积分-->
+          <view class='fen_ pd30'>
+          <view>积分</view>
+          <view>返积分<text>{{26}}</text>点</view>
+          </view>
+
+          <!--订单操作-->
+          <view class='btn-btm_ pd30'>
+            <view>取消订单</view>
+            <view>去支付</view>
+          </view>
+</view>
+
+
+</view>

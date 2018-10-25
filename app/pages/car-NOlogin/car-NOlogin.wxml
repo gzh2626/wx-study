@@ -1,0 +1,5 @@
+<view>
+<image src='../img/car-no-head.png'></image>
+<view>您还没有登录，请登录后查看购物车</view>
+<button bindtap='login'>登录</button>
+</view>

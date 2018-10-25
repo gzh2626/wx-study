@@ -1,0 +1,69 @@
+<view class='pd30 weizhi1'>
+  <view class="section1">
+    <input placeholder="请输入关键字搜索" confirm-type="search" value='{{queryStr}}' bindinput="searchInput" bindconfirm="search" />
+    <view bindtap='search'>
+      <image src="../img/search.png"></image>
+    </view>
+  </view>
+  <view class='dis' bindtap='back'>取消</view>
+</view>
+<view class='has pd30' wx:if='{{searchArray.length!==0}}'>
+  <view class='jia' bindtap="sortBySale">
+    销量优先
+    <image src='../img/top-btm.png'></image>
+    <!-- <view class="all hide{{showView?'show':''}}">
+      <view>按信用排序</view>
+      <view>按销量排序</view>
+      <view>按价格排序</view>
+    </view> -->
+  </view>
+  <view class='jia' bindtap="sortByPrice">价格
+    <image src='../img/top-btm.png'></image>
+  </view>
+</view>
+<view class='search-pro' wx:if='{{searchArray.length!=0}}'>
+  <view class='tuijian' wx:for="{{searchArray}}" data-id='{{index}}'>
+    <view class='tuiJian-img' bindtap='pro' data-num='{{item.num}}' data-goodsId='{{item.id}}'>
+      <image src='{{item.img[0]}}' mode='aspectFill'></image>
+    </view>
+    <view class='tuiJian-text'>
+
+      <view bindtap='pro' bindtap='pro' data-num='{{item.num}}' data-goodsId='{{item.id}}'>
+        <text class='te' wx:if="{{item.isDiscount}}">特</text>
+        <text class='te' wx:if="{{item.isLimit}}">限</text>{{item.name}}</view>
+      <view class='gui'>规格：{{item.specification}}</view>
+      <view class='xian' wx:if='{{item.isLimit==true}}'>
+        每人限购{{item.limitCount}}件
+      </view>
+      <view class='tuijian-money'>
+        <view class='money'>
+          {{item.discountPrice}}
+          <view class='yueXiao'>月售
+            <text>{{item.thirtyDaysSales}}</text>笔</view>
+        </view>
+
+        <view class='add'>
+          <view class="redu {{minusStatus}}" bindtap="minusNum" data-index='{{index}}' data-num='{{item.num}}'>-</view>
+          <input type="number" bindchange="bindManual" value="{{item.num}}" />
+          <view class='plus' bindtap="addNum" data-index='{{index}}' data-num='{{item.num}}' id='{{index}}'>+</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view wx:if='{{searchArray.length==0}}'>
+  <view class='no pd30'>
+    <image src='../img/no-img.png'></image>
+    <view>没有查询到您要的商品</view>
+  </view>
+</view>
+
+<view class="bottom-view" wx:if="{{goodList.length>0}}">
+  <view class="total-view">已选 {{total}} 件</view>
+  <view class="price-view">
+    合计
+    <text>￥{{totalPrice}}</text>
+    <view bindtap='toPay'>结算</view>
+  </view>
+</view>

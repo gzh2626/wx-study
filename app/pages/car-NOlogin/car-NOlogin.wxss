@@ -1,0 +1,26 @@
+image{
+  width: 221rpx;
+  height: 221rpx;
+
+}
+view{
+  text-align: center;
+}
+view:first-child{
+  padding-top: 280rpx;
+}
+view>view{
+  font-size: 24rpx;
+  color: #333;
+  margin-top: 30rpx;
+}
+button{
+  width: 150rpx;
+  height: 70rpx;
+  text-align: center;
+  color: white;
+  background: #0097ff;
+  line-height: 70rpx;
+  font-size: 32rpx;
+  margin-top: 60rpx;
+}

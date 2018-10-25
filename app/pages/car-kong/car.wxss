@@ -1,0 +1,18 @@
+.car{
+  padding-top: 280rpx;
+  text-align: center;
+}
+.car>image{
+  width: 220rpx;
+height: 220rpx;
+}
+.car>view{
+  font-size: 24rpx;
+  margin-top: 18rpx;
+}
+.car>view:nth-child(1){
+  color: #999999;
+}
+.car>view:nth-child(2){
+  color: #333;
+}

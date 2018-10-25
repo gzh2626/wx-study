@@ -1,0 +1,48 @@
+
+.btn{
+  margin-top:10px;
+  flex-direction: row-reverse;
+  align-items: center;
+  background: #fff;
+  padding:6px;
+  height: 80rpx;
+}
+.btn>view{
+  font-size: 24rpx;
+  border:1rpx solid #999;
+  float: right;
+  color: #333;
+  border-radius: 25rpx;
+  width: 150rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+}
+.btn>view:first-child{
+  color: #0097ff;
+  border:1rpx solid #0097ff;
+  margin-left: 20rpx;
+
+}
+.btn>navigator{
+  font-size: 24rpx;
+  border:1rpx solid #999;
+  color: #333;
+  border-radius: 25rpx;
+  width: 150rpx;
+  float: right;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+}
+.btn>navigator:first-child{
+  color: #0097ff;
+  border:1rpx solid #0097ff;
+  margin-left: 20rpx;
+}
+text.active{
+  color: #0097ff;
+}
+.pro-name{
+  padding-left: 20rpx;
+}

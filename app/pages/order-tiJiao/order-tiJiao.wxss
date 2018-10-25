@@ -1,0 +1,41 @@
+.name{
+  padding-top: 10rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+.name>view{
+  padding: 15rpx 25rpx;
+  border-radius: 7rpx;
+  border:1rpx solid #ccc;
+  color: #666;
+  margin:20rpx 30rpx 0 0;
+}
+.name>view.active{
+  border-color: #0097ff;
+  color: #0097ff;
+}
+.tiJiao{
+  display: flex;
+  padding-top: 20rpx;
+  background: #fff;
+  font-size: 28rpx;
+}
+.tiJiao>view:first-child{
+  margin-right: 20rpx;
+
+}
+.tiJiao>view:last-child{
+  padding-bottom: 20rpx;
+  border-bottom: 1rpx solid #e8e8e8;
+  width: 100%;
+
+}
+button{
+  background: #0097ff;
+  color: #fff;
+  margin-top: 65rpx;
+  border-radius: 0;
+  font-size: 28rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+}
