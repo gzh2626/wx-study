@@ -49,7 +49,7 @@ function getSearchMusic(keyword, pageindex, callbackcount, callback) {
     }
   })
 }
-var HOST_URL = 'http://cqsx-api.yuxisoft.cn'
+var HOST_URL = 'http://'
 module.exports = {
   getSearchMusic: getSearchMusic,
   HOST_URL: HOST_URL,
